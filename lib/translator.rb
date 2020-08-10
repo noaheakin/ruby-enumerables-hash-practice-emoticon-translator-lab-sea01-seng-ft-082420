@@ -16,10 +16,9 @@ end
 
 def get_english_meaning (file_path, emoji)
   library = load_library(file_path)
-  binding.pry
   library.each do |key, value|
-    value.each do |element|
-      if element == emoji
+    value.each do |inner_key, inner_value|
+      if inner_value == emoji
         return library[key]
       end
     end
