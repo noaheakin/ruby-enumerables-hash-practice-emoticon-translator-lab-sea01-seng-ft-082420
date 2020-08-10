@@ -15,7 +15,7 @@ def load_library (file_path)
 end
 
 def get_english_meaning (file_path, emoji)
-  library = YAML.load_file(file_path)
+  library = load_library(file_path)
   library.each do |key, value|
     value.each do |element|
       if element == emoji
